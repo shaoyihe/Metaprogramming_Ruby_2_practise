@@ -27,8 +27,8 @@ end
 
 xml = Xml.new
 xml.person do |b|
-	b.name(class: "test2"){|b| b.age(100); } 
-	b.phone("555-1234") 
+	b.name(class: "test2"){|b| b.age(100); }
+	b.phone("555-1234")
 end
 
 puts xml.to_s
