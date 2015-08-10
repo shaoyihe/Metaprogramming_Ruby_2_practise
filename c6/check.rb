@@ -27,4 +27,4 @@ module CheckedAttributes2
 			end
 		end
 	end
-end	
+wend	
