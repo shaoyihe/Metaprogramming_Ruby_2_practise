@@ -10,11 +10,12 @@ module MyConcern2
 	end
 end
 
-
 module MyConcern
 	extend ActiveSupport::Concern
 
-	def an_instance_method; "an instance method"; end
+	def an_instance_method;
+			"an instance method";
+	end
 
 	module ClassMethods
 		def a_class_method; "a class method"; end
