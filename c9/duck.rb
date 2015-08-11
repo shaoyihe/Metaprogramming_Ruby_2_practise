@@ -1,7 +1,7 @@
 require 'active_record'
 
 conn = ActiveRecord::Base.establish_connection :adapter => "sqlite3",
-			:database => "D:/projcect/ruby/sqlite3/test_he.sqlite3"
+			:database => "../sqlite3/test_he.sqlite3"
 # p conn
 
 
@@ -12,7 +12,7 @@ class Duck < ActiveRecord::Base
 end
 
 duck = Duck.new
-duck.name = "Test"
+duck.name = "DTest"
 p duck
 p duck.save!
 

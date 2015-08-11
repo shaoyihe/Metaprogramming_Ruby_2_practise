@@ -15,6 +15,7 @@ module MyConcern
 
 	def an_instance_method;
 			"an instance method";
+
 	end
 
 	module ClassMethods
