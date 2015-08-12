@@ -1,7 +1,6 @@
 require 'active_support'
-
-class MyClass
-  def self.alias_method_chain(target, feature)
+module MyModule
+  def alias_method_chain(target, feature)
     # Strip out punctuation on predicates or bang methods since
     # e.g. target?_without_feature is not a valid method name.
     aliased_target, punctuation = target.to_s.sub(/([?!=])$/, ''), $1
@@ -22,6 +21,23 @@ class MyClass
         private target
     end
   end
-
-  alias_method_chain :test ,:other
 end
+
+class MySuperClass
+  def test_he
+      "old"
+  end
+end
+
+class MyClass < MySuperClass
+  extend MyModule
+
+  def test_he_with_other
+      "new"
+  end
+
+  alias_method_chain :test_he ,:other
+end
+
+myclass = MyClass.new
+p MyClass.instance_methods(false).map{|m| "#{m} : #{myclass.send(m)}"}
